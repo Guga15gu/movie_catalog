@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to 'Home', root_path%>
+        </li>
+        <li>
+          <%= link_to 'Cadastrar novo gênero', new_genre_path%>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
