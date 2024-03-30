@@ -1,3 +1,6 @@
 class Genre < ApplicationRecord
-  has_many :directors
+  has_many :directors, :movies
+
+end
+
 end
