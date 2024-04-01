@@ -1,0 +1,7 @@
+<h1>Lista de Gêneros </h1>
+
+<% @genres.each do | genre | %> 
+    <!--<a href="/receitas/<%= genre.id %>"> <%= genre.name %>-->
+    <%= link_to genre.name, genre %>
+    <br />
+<% end %>
