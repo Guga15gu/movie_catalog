@@ -1,8 +1,6 @@
 <h1>Home#index Lista de Filmes</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
 <% @movies.each do | movie | %>
-    <!--<a href="/receitas/<%= recipe.id %>"> <%= recipe.name %>-->
-    <%= link_to movie.name, movie %>
-    <br />
+  <%= link_to movie.title, movie %>
+  <br />
 <% end %>

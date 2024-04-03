@@ -1,0 +1,9 @@
+<h1>Registro de Filme </h1>
+
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end%>
+
+<%= render partial: 'form', locals: { movie: @movie }  %>

@@ -1,0 +1,33 @@
+<h1> Informações sobre o Filme: <%= @movie.title %></h1>
+
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end%>
+
+<%= link_to 'Editar', edit_movie_path %>
+
+<dl>
+  <dt>
+    <strong>Título:</strong> <%= @movie.title %>
+  </dt>
+  <dd>
+    <strong> Ano: </strong> <%= @movie.year %>
+  </dd>
+  <dd>
+    <strong> Sinopse: </strong> <%= @movie.summary %>
+  </dd>
+  <dd>
+    <strong> País de origem: </strong> <%= @movie.country %>
+  </dd>
+  <dd>
+    <strong> Duração em minutos: </strong> <%= @movie.duration %>
+  </dd>
+  <dd>
+    <strong> Diretor: </strong> <%= @movie.director.name if @movie.director_id %>
+  </dd>
+  <dd>
+    <strong> Gênero: </strong> <%= @movie.genre.name if @movie.genre_id %>
+  </dd>
+<dl>
