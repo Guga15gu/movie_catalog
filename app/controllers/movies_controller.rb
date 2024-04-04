@@ -49,4 +49,11 @@ class MoviesController < ApplicationController
 
     render :edit
   end
+
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+
+    redirect_to movies_index_path
+  end
 end

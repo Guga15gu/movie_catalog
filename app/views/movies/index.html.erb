@@ -2,5 +2,7 @@
 
 <% @movies.each do | movie | %> 
   <%= link_to movie.title, movie %>
+  <%= link_to 'Excluir', movie_path(movie), data: { turbo_method: :delete, turbo_confirm: 'Quer excluir este filme?' } %>
+  <br />
   <br />
 <% end %>
