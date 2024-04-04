@@ -1,3 +1,9 @@
 <h1>Editar Gênero </h1>
 
+<% if flash[:notice] %>
+    <div style="margin: 10px 0px">
+        <%= flash[:notice] %>
+    </div>
+<% end%>
+
 <%= render partial: 'form', locals: { genre: @genre }  %>

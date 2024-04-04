@@ -13,6 +13,12 @@ class GenresController < ApplicationController
   end
 
   def create
+
+    if Genre.exists?(name: params[:genre][:name])
+      flash[:notice] = 'Gênero já cadastrado!'
+      return redirect_to new_genre_path
+    end
+
     @genre = Genre.new(name: params[:genre][:name])
 
     if @genre.save
@@ -28,6 +34,11 @@ class GenresController < ApplicationController
   end
 
   def update
+    if Genre.exists?(name: params[:genre][:name])
+      flash[:notice] = 'Gênero já cadastrado!'
+      return redirect_to edit_genre_path
+    end
+
     @genre = Genre.find(params[:id])
 
     if @genre.update( name: params[:genre][:name])
