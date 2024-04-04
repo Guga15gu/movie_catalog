@@ -43,4 +43,11 @@ class DirectorsController < ApplicationController
 
     render :edit
   end
+
+  def destroy
+    director = Director.find(params[:id])
+    director.destroy
+
+    redirect_to directors_index_path
+  end
 end

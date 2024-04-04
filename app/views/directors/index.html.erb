@@ -2,5 +2,6 @@
 
 <% @directors.each do | director | %> 
   <%= link_to director.name, director %>
+  <%= link_to 'Excluir', director_path(director), data: { turbo_method: :delete, turbo_confirm: 'Quer excluir este diretor?' } %>
   <br />
 <% end %>
