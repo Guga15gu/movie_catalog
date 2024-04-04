@@ -50,4 +50,11 @@ class GenresController < ApplicationController
     render :edit
   end
 
+  def destroy
+    genre = Genre.find(params[:id])
+    genre.destroy
+
+    redirect_to genres_index_path
+  end
+
 end
