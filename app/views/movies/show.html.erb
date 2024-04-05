@@ -25,9 +25,15 @@
     <strong> Duração em minutos: </strong> <%= @movie.duration %>
   </dd>
   <dd>
-    <strong> Diretor: </strong> <%= @movie.director.name if @movie.director_id %>
+    <strong> Diretor: </strong> 
+    <% if @movie.director_id %>
+      <%= link_to @movie.director.name, director_path(@movie.director) %>
+    <% end %>
   </dd>
   <dd>
-    <strong> Gênero: </strong> <%= @movie.genre.name if @movie.genre_id %>
+    <strong> Gênero: </strong> 
+    <% if @movie.genre_id %>
+      <%= link_to @movie.genre.name, genre_path(@movie.genre) %>
+    <% end %>
   </dd>
 <dl>

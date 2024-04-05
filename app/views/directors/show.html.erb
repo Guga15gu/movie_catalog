@@ -19,7 +19,10 @@
     <strong> Aniversário: </strong> <%= @director.data_birth %>
   </dd>
   <dd>
-    <strong> Gênero Favorito: </strong> <%= @director.favorite_genre.name if @director.favorite_genre_id %>
+    <strong> Gênero Favorito: </strong> 
+    <% if @director.favorite_genre_id %>
+      <%= link_to @director.favorite_genre.name, genre_path(@director.favorite_genre_id) %>
+    <% end %>
   </dd>
 <dl>
 
