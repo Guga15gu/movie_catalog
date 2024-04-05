@@ -22,3 +22,9 @@
     <strong> Gênero Favorito: </strong> <%= @director.favorite_genre.name if @director.favorite_genre_id %>
   </dd>
 <dl>
+
+<h2>Filmes:</h2>
+<% Movie.where(director_id: @director.id).each do | movie | %> 
+  <%= link_to movie.title, movie %>
+  <br />
+<% end %>
