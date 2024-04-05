@@ -1,8 +1,8 @@
 <h1>Lista de Filmes </h1>
 
 <% @movies.each do | movie | %> 
-  <%= link_to movie.title, movie %>
+  Nome: <%= link_to movie.title, movie %>
+  Ano: <%= movie.year %>
   <%= link_to 'Excluir', movie_path(movie), data: { turbo_method: :delete, turbo_confirm: 'Quer excluir este filme?' } %>
-  <br />
   <br />
 <% end %>
